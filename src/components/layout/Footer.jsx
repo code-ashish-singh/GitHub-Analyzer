@@ -3,8 +3,8 @@ import { GitHubIcon, LinkedInIcon, TwitterIcon } from '../ui/BrandIcons';
 import { NAV_LINKS } from '../../constants/navigationLinks';
 
 const SOCIAL_LINKS = [
-  { Icon: GitHubIcon, href: '#', label: 'GitHub' },
-  { Icon: LinkedInIcon, href: '#', label: 'LinkedIn' },
+  { Icon: GitHubIcon, href: 'https://github.com/code-ashish-singh', label: 'GitHub' },
+  { Icon: LinkedInIcon, href: 'https://www.linkedin.com/in/ashishsingh2707', label: 'LinkedIn' },
   { Icon: TwitterIcon, href: '#', label: 'Twitter' },
 ];
 
@@ -57,6 +57,8 @@ const Footer = () => (
               <a
                 key={label}
                 href={href}
+                target="_blank"
+                rel="noreferrer"
                 aria-label={label}
                 className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center
                   text-gray-400 hover:text-white hover:border-white/30 hover:bg-white/10 transition-all"
@@ -71,6 +73,7 @@ const Footer = () => (
       {/* Bottom bar */}
       <div className="border-t border-white/[0.07] pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
         <p className="text-gray-600 text-sm">© 2025 GitInsight AI. All rights reserved.</p>
+        <p className="text-gray-600 text-sm">Designed & Developed by <a href="https://www.linkedin.com/in/ashishsingh2707" target="_blank" rel="noreferrer" className="text-violet-400 hover:text-violet-300 transition-colors">Ashish Singh</a></p>
         <div className="flex gap-6 text-sm text-gray-600">
           <a href="#" className="hover:text-gray-300 transition-colors">Privacy Policy</a>
           <a href="#" className="hover:text-gray-300 transition-colors">Terms of Service</a>

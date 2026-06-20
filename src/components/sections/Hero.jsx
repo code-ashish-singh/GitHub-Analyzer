@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { CheckCircle, Sparkles, Star, Target } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 import UsernameInput from '../ui/UsernameInput';
 import GlassCard from '../ui/GlassCard';
 import useGithubAnalysis from '../../hooks/useGithubAnalysis';
@@ -79,11 +80,13 @@ const MockProfileCard = () => (
 );
 
 const Hero = () => {
+  const navigate = useNavigate();
   const { mutate, isPending } = useGithubAnalysis();
 
   const handleSubmit = (username) => {
-    mutate(username);
-    // TODO: navigate to /dashboard/:username once dashboard page is ready
+    mutate(username, {
+      onSuccess: () => navigate(`/dashboard/${username}`),
+    });
   };
 
   return (
